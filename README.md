@@ -18,3 +18,15 @@
 one The last element becomes the first one. 
  <br> ~ ```rrb```: same as above for ```b```.<br> ~ ```rrr``` : ```rra``` and ```rrb``` at the
 > same time.<br>
+
+
+
+# How to use
+> make 
+> ARG="some random amount of numbers"; ./push_swap $ARG
+** output: **
+> instructions required to sort stack.
+** check if they're correct **
+> ARG="some random amount of numbers"; ./push_swap $ARG | ./checker $ARG
+** output ** 
+> should out put Ok if correct Ko if not.
