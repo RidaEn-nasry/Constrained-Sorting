@@ -24,7 +24,7 @@ one The last element becomes the first one.
 # How to use
 $ make <br>
 $ ARG="some random amount of numbers"; ./push_swap $ARG <br>
-> output: instructions required to sort stack. <br>
-> check if they're correct <br>
+=> output: instructions required to sort stack. <br>
+=> check if they're correct <br>
 $ ARG="some random amount of numbers"; ./push_swap $ARG | ./checker $ARG <br>
-> output: should out put Ok if correct Ko if not. <br>
+=> output: should out put Ok if correct Ko if not. <br>
