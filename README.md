@@ -22,8 +22,8 @@ one The last element becomes the first one.
 
 
 # How to use
-> make 
-> ARG="some random amount of numbers"; ./push_swap $ARG
+> make <br>
+> ARG="some random amount of numbers"; ./push_swap $ARG <br>
 ** output: **
 > instructions required to sort stack.
 ** check if they're correct **
