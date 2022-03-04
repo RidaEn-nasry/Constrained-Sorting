@@ -6,11 +6,27 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 16:37:10 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/02/26 18:07:27 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:55:48 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	count(char *string)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (string[i])
+	{
+		if (string[i] == ' ')
+			count++;
+		i++;
+	}
+	return (count);
+}
 
 char	*to_string(char **av)
 {
@@ -20,6 +36,8 @@ char	*to_string(char **av)
 
 	i = 1;
 	string = malloc(1);
+	if (!string)
+		exit(err(NULL, "Error\n", EXIT_FAILURE));
 	while (av[i])
 	{
 		tmp = ft_strjoin(string, av[i]);

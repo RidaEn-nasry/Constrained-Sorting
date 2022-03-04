@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:13:01 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/02/26 13:00:46 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:12:27 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,24 @@ void	swap(int *xp, int *yp)
 	*yp = temp;
 }
 
-int	*arr_init(t_vector *stack_a)
+int	*arr_init(t_stacks *stacks)
 {
 	int	i;
 	int	*sorted_list;
 
 	i = 0;
-	sorted_list = malloc(sizeof(int) * stack_a->size);
-	while (i < stack_a->size)
+	sorted_list = malloc(sizeof(int) * stacks->stack_a.size);
+	if (!sorted_list)
+		exit(err(stacks, "Error\n", EXIT_FAILURE));
+	while (i < stacks->stack_a.size)
 	{
-		sorted_list[i] = stack_a->vector[i];
+		sorted_list[i] = stacks->stack_a.vector[i];
 		i++;
 	}
 	return (sorted_list);
 }
 
-int	*sort(t_vector *stack_a)
+int	*sort(t_stacks *stacks)
 {
 	int	i;
 	int	j;
@@ -44,12 +46,12 @@ int	*sort(t_vector *stack_a)
 	int	*sorted_list;
 
 	i = 0;
-	sorted_list = arr_init(stack_a);
-	while (i < stack_a->size - 1)
+	sorted_list = arr_init(stacks);
+	while (i < stacks->stack_a.size - 1)
 	{
 		min_index = i;
 		j = i + 1;
-		while (j < stack_a->size)
+		while (j < stacks->stack_a.size)
 		{
 			if (sorted_list[j] < sorted_list[min_index])
 				min_index = j;

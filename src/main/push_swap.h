@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 20:54:59 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/02/26 18:01:43 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:07:28 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void		ra(t_vector *stack_a, int print);
 void		rb(t_vector *stack_b, int print);
 void		rr(t_stacks *stacks, int print);
 void		swap(int *xp, int *yp);
-int			*arr_init(t_vector *stack_a);
-int			*sort(t_vector *stack_a);
+int			*arr_init(t_stacks *stacks);
+int			*sort(t_stacks *stacks);
 void		sort_rest(t_stacks *stacks);
 void		sort_more_than_hundred(t_stacks *stacks);
 void		least_ten(t_stacks *stacks);
@@ -78,7 +78,8 @@ t_stacks	init_stacks(char *string);
 int			length(char **av);
 char		*to_string(char **av);
 int			divide(int *sorted_list, int size, int divided, int chunks);
-int			underflow(char *num);
-int			overflow(char *num);
+long long	convert(const char *str, t_stacks *stacks);
+// int			underflow(char *num);
+// int			overflow(char *num);
 
 #endif

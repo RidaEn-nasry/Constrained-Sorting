@@ -6,11 +6,39 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 20:17:07 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/02/26 18:12:43 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:14:39 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+long long	convert(const char *str, t_stacks *stacks)
+{
+	int					sign;
+	long long			result;
+	int					i;
+
+	result = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] && (str[i] == '\f' || str[i] == '\t' || str[i] == ' ' \
+		|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v'))
+			i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+				sign = -1;
+	}
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+			result *= 10;
+			result += str[i++] - '0';
+	}
+		result *= sign;
+	if (result > INT_MAX || result < INT_MIN)
+		exit(err(stacks, "Error\n", EXIT_FAILURE));
+	return (result);
+}
 
 int	is_number(char *number)
 {
@@ -60,22 +88,6 @@ int	sorted(t_vector *vector)
 		i++;
 	}
 	return (1);
-}
-
-int	count(char *string)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (string[i])
-	{
-		if (string[i] == ' ')
-			count++;
-		i++;
-	}
-	return (count);
 }
 
 int	err(t_stacks *stacks, char *message, int ret)

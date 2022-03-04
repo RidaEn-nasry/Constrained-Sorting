@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 14:14:10 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/02/26 18:11:11 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/03/03 13:07:05 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	one_hundred(t_stacks *stacks)
 	int	*sorted_list;
 
 	i = 1;
-	sorted_list = sort(&stacks->stack_a);
+	sorted_list = sort(stacks);
 	while (i != 4)
 	{
 		key_number = divide(sorted_list, stacks->stack_a.size, i, 4);
@@ -92,7 +92,7 @@ void	five_hundred(t_stacks *stacks)
 	int	*sorted_list;
 
 	i = 1;
-	sorted_list = sort(&stacks->stack_a);
+	sorted_list = sort(stacks);
 	while (i != 12)
 	{
 		key_number = divide(sorted_list, \
