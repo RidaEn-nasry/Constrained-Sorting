@@ -18,7 +18,3 @@
 one The last element becomes the first one. 
  <br> ~ ```rrb```: same as above for ```b```.<br> ~ ```rrr``` : ```rra``` and ```rrb``` at the
 > same time.<br>
-
-one cannot compare without comparison and in the algorithmic problem its allowed because its not a movement per se, in algo problem you can compare what you're at, and you're arrive at what you're at by looping, so I thought lets just say 
-
-```cab```: compare any or all elements in ```a``` and ```b``` any time.
